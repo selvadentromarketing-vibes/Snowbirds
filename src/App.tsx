@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import Header from '@/sections/Header';
 import HeroSection from '@/sections/HeroSection';
-import VideoLetterSection from '@/sections/VideoLetterSection';
+import PriceLotSection from '@/sections/PriceLotSection';
 import WhyTulumSection from '@/sections/WhyTulumSection';
 import BlueZoneSection from '@/sections/BlueZoneSection';
 import ConceptSection from '@/sections/ConceptSection';
@@ -89,7 +89,7 @@ function App() {
         {/* Main content */}
         <main className="relative">
           <HeroSection />
-          <VideoLetterSection />
+          <PriceLotSection />
           <WhyTulumSection />
           <BlueZoneSection />
           <ConceptSection />

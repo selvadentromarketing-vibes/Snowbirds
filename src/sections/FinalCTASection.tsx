@@ -282,7 +282,7 @@ export default function FinalCTASection() {
       <footer className="relative z-10 mt-24 pt-8 border-t border-sand-cream/10">
         <div className="px-6 lg:px-12 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <img
-            src="/selvadentro-logo.webp"
+            src="/selvadentro-logo-white.png"
             alt="Selvadentro Tulum"
             className="h-7 w-auto opacity-60"
           />

@@ -25,7 +25,7 @@ export default function Header() {
 
   const menuItems = [
     { id: 'hero', label: 'Inicio' },
-    { id: 'video-letter', label: 'Video' },
+    { id: 'pricing', label: 'Inversión' },
     { id: 'why-tulum', label: 'Tulum' },
     { id: 'blue-zone', label: 'Bienestar' },
     { id: 'concept', label: 'Concepto' },
@@ -49,7 +49,7 @@ export default function Header() {
             className="hover:opacity-80 transition-opacity"
           >
             <img
-              src="/selvadentro-logo.webp"
+              src="/selvadentro-logo-white.png"
               alt="Selvadentro Tulum"
               className="h-8 lg:h-9 w-auto"
             />
@@ -98,7 +98,7 @@ export default function Header() {
           {/* Menu header */}
           <div className="flex items-center justify-between px-6 lg:px-12 py-5">
             <img
-              src="/selvadentro-logo.webp"
+              src="/selvadentro-logo-white.png"
               alt="Selvadentro Tulum"
               className="h-8 lg:h-9 w-auto"
             />

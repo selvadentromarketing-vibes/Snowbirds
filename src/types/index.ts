@@ -18,13 +18,27 @@ export const translations = {
     // Sticky CTA
     stickyTagline: '9 cenotes naturales · 65% selva preservada · Tulum, México',
 
-    // Video Letter Section
-    videoLabel: 'CARTA EN VIDEO',
-    videoStatement: 'La mayoría de los lugares prometen una vida hermosa. Muy pocos están diseñados para ayudarte a vivir mejor y más tiempo.',
-    videoCta: 'Ver el video',
+    // Price & Lot Section
+    lotSectionTitle: 'Invierte en tierra que genera valor real',
+    lotPriceFrom: '$67,500',
+    lotPriceLabel: 'Lotes residenciales desde (USD)',
+    lotAppreciationLabel: 'Apreciación Fase 1 a Fase 4',
+    lotPreservedLabel: 'Selva preservada',
+    lotFinancingLabel: 'Interés · 48 meses de financiamiento',
+    lotPhaseTitle: 'Programa de precios por fase',
+    lotPhaseCol: 'Fase',
+    lotPriceCol: 'Precio / sqft',
+    lotGainCol: 'Ganancia acumulada',
+    lotPhase1: 'Fase 1',
+    lotCurrent: '(ACTUAL)',
+    lotPhase2: 'Fase 2',
+    lotPhase3: 'Fase 3',
+    lotPhase4: 'Fase 4',
+    lotPriceNote: 'Aumento automático de +1% cada 10 lotes vendidos. Entrega del proyecto: 2029.',
+    lotCta: 'Solicitar disponibilidad y precios',
 
     // Why Tulum Section
-    whyTulumTitle: 'Por qué los snowbirds eligen Tulum',
+    whyTulumTitle: 'Por qué los migrantes invernales eligen Tulum',
     warmWeather: 'Clima cálido todo el año',
     warmWeatherDesc: 'Promedio 27°C / 80°F con más de 300 días de sol al año. Sin inviernos.',
     airportAccess: 'Aeropuerto internacional a minutos',
@@ -44,9 +58,9 @@ export const translations = {
 
     // Architecture Section
     architectureTitle: 'Arquitectura diseñada para integrarse con la selva',
-    mexicanCraft: 'Artesanía mexicana',
-    balineseCalm: 'Calma balinesa',
-    tropicalModern: 'Modernismo tropical',
+    mexicanCraft: 'Casa de los Cenotes',
+    balineseCalm: 'Spa & Bienestar',
+    tropicalModern: 'Refugio en la selva',
 
     // Lifestyle Section
     lifestyleTitle: 'Un día en Selvadentro',
@@ -99,10 +113,24 @@ export const translations = {
     // Sticky CTA
     stickyTagline: '9 natural cenotes · 65% preserved jungle · Tulum, Mexico',
 
-    // Video Letter Section
-    videoLabel: 'VIDEO LETTER',
-    videoStatement: 'Most places promise a beautiful lifestyle. Very few are designed to help you live longer and better.',
-    videoCta: 'Watch the film',
+    // Price & Lot Section
+    lotSectionTitle: 'Invest in land that generates real value',
+    lotPriceFrom: '$67,500',
+    lotPriceLabel: 'Residential lots from (USD)',
+    lotAppreciationLabel: 'Appreciation Phase 1 to Phase 4',
+    lotPreservedLabel: 'Jungle preserved',
+    lotFinancingLabel: 'Interest · 48-month financing',
+    lotPhaseTitle: 'Phase pricing schedule',
+    lotPhaseCol: 'Phase',
+    lotPriceCol: 'Price / sqft',
+    lotGainCol: 'Cumulative gain',
+    lotPhase1: 'Phase 1',
+    lotCurrent: '(CURRENT)',
+    lotPhase2: 'Phase 2',
+    lotPhase3: 'Phase 3',
+    lotPhase4: 'Phase 4',
+    lotPriceNote: 'Automatic +1% price increase every 10 lots sold. Project delivery: 2029.',
+    lotCta: 'Request availability & pricing',
 
     // Why Tulum Section
     whyTulumTitle: 'Why snowbirds are choosing Tulum',
@@ -125,9 +153,9 @@ export const translations = {
 
     // Architecture Section
     architectureTitle: 'Architecture designed to blend into the jungle',
-    mexicanCraft: 'Mexican craft',
-    balineseCalm: 'Balinese calm',
-    tropicalModern: 'Tropical modernism',
+    mexicanCraft: 'Casa de los Cenotes',
+    balineseCalm: 'Spa & Wellness',
+    tropicalModern: 'Jungle refuge',
 
     // Lifestyle Section
     lifestyleTitle: 'A day at Selvadentro',
