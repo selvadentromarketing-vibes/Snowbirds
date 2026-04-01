@@ -31,55 +31,27 @@ export default function FinalCTASection() {
     if (!section || !content || !form || !contact) return;
 
     const ctx = gsap.context(() => {
-      // Content animation
       gsap.fromTo(content.children,
         { opacity: 0, y: 18 },
         {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          stagger: 0.1,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: content,
-            start: 'top 80%',
-            end: 'top 55%',
-            scrub: true,
-          }
+          opacity: 1, y: 0, duration: 0.8, stagger: 0.1, ease: 'power2.out',
+          scrollTrigger: { trigger: content, start: 'top 80%', end: 'top 55%', scrub: true }
         }
       );
 
-      // Form animation
       gsap.fromTo(form,
         { opacity: 0, y: 24, scale: 0.99 },
         {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.8,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: form,
-            start: 'top 80%',
-            end: 'top 55%',
-            scrub: true,
-          }
+          opacity: 1, y: 0, scale: 1, duration: 0.8, ease: 'power2.out',
+          scrollTrigger: { trigger: form, start: 'top 80%', end: 'top 55%', scrub: true }
         }
       );
 
-      // Contact row animation
       gsap.fromTo(contact,
         { opacity: 0 },
         {
-          opacity: 1,
-          duration: 0.6,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: contact,
-            start: 'top 90%',
-            end: 'top 70%',
-            scrub: true,
-          }
+          opacity: 1, duration: 0.6, ease: 'power2.out',
+          scrollTrigger: { trigger: contact, start: 'top 90%', end: 'top 70%', scrub: true }
         }
       );
     }, section);
@@ -116,7 +88,6 @@ export default function FinalCTASection() {
       setIsSubmitted(true);
       setFormData({ name: '', email: '', phone: '', country: '' });
 
-      // Fire Meta Pixel lead event
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const w = window as any;
       if (w.fbq) w.fbq('track', 'Lead', { content_name: 'Snowbirds Landing Page' });
@@ -134,41 +105,31 @@ export default function FinalCTASection() {
   };
 
   return (
-    <section 
+    <section
       ref={sectionRef}
       id="contact"
       className="section-flowing relative py-24 lg:py-32"
-      style={{ zIndex: 100, backgroundColor: '#0B3A3A' }}
+      style={{ zIndex: 100, backgroundColor: '#F5F2EA' }}
     >
-      {/* Subtle background image */}
-      <div className="absolute inset-0 opacity-20">
-        <img 
-          src="/jungle_architecture_aerial.jpg" 
-          alt=""
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-jungle-deep via-jungle-deep/90 to-jungle-deep/80" />
-      </div>
-
       <div className="relative z-10 px-6 lg:px-12 max-w-3xl mx-auto">
         {/* Content */}
         <div ref={contentRef} className="text-center mb-12">
-          <h2 
-            className="font-serif text-section text-sand-cream tracking-wide mb-4"
+          <h2
+            className="font-serif text-section text-jungle-deep tracking-wide mb-4"
             style={{ lineHeight: 1.1 }}
           >
             {t('finalTitle')}
           </h2>
-          <p className="text-base lg:text-lg text-sand-cream/70 font-light">
+          <p className="text-base lg:text-lg text-jungle-deep/65 font-light">
             {t('finalDesc')}
           </p>
         </div>
 
         {/* Form */}
-        <form 
+        <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className="space-y-6 mb-10"
+          className="space-y-6 mb-10 bg-white/50 rounded-xl p-8 border border-jungle-deep/10"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
@@ -179,7 +140,7 @@ export default function FinalCTASection() {
                 onChange={handleChange}
                 placeholder={t('formName') as string}
                 required
-                className="w-full bg-transparent border-b border-sand-cream/30 py-3 text-sand-cream placeholder:text-sand-cream/50 focus:outline-none focus:border-gold transition-colors"
+                className="w-full bg-transparent border-b border-jungle-deep/20 py-3 text-jungle-deep placeholder:text-jungle-deep/40 focus:outline-none focus:border-gold transition-colors"
               />
             </div>
             <div>
@@ -190,11 +151,11 @@ export default function FinalCTASection() {
                 onChange={handleChange}
                 placeholder={t('formEmail') as string}
                 required
-                className="w-full bg-transparent border-b border-sand-cream/30 py-3 text-sand-cream placeholder:text-sand-cream/50 focus:outline-none focus:border-gold transition-colors"
+                className="w-full bg-transparent border-b border-jungle-deep/20 py-3 text-jungle-deep placeholder:text-jungle-deep/40 focus:outline-none focus:border-gold transition-colors"
               />
             </div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <input
@@ -203,7 +164,7 @@ export default function FinalCTASection() {
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder={t('formPhone') as string}
-                className="w-full bg-transparent border-b border-sand-cream/30 py-3 text-sand-cream placeholder:text-sand-cream/50 focus:outline-none focus:border-gold transition-colors"
+                className="w-full bg-transparent border-b border-jungle-deep/20 py-3 text-jungle-deep placeholder:text-jungle-deep/40 focus:outline-none focus:border-gold transition-colors"
               />
             </div>
             <div>
@@ -213,14 +174,14 @@ export default function FinalCTASection() {
                 value={formData.country}
                 onChange={handleChange}
                 placeholder={t('formCountry') as string}
-                className="w-full bg-transparent border-b border-sand-cream/30 py-3 text-sand-cream placeholder:text-sand-cream/50 focus:outline-none focus:border-gold transition-colors"
+                className="w-full bg-transparent border-b border-jungle-deep/20 py-3 text-jungle-deep placeholder:text-jungle-deep/40 focus:outline-none focus:border-gold transition-colors"
               />
             </div>
           </div>
 
           <div className="pt-6 text-center">
             {isSubmitted ? (
-              <div className="py-4 text-gold font-medium tracking-wide">
+              <div className="py-4 text-gold-dark font-medium tracking-wide">
                 {language === 'es'
                   ? 'Gracias. Nos pondremos en contacto pronto.'
                   : 'Thank you. We\'ll be in touch soon.'}
@@ -235,7 +196,7 @@ export default function FinalCTASection() {
               </button>
             )}
             {submitError && (
-              <p className="mt-3 text-sm text-red-400">
+              <p className="mt-3 text-sm text-red-600">
                 {language === 'es'
                   ? 'Error al enviar. Intenta de nuevo o contáctanos por WhatsApp.'
                   : 'Submission error. Please try again or contact us via WhatsApp.'}
@@ -245,31 +206,31 @@ export default function FinalCTASection() {
         </form>
 
         {/* Contact alternatives */}
-        <div 
+        <div
           ref={contactRef}
-          className="text-center pt-8 border-t border-sand-cream/10"
+          className="text-center pt-8 border-t border-jungle-deep/10"
         >
-          <p className="text-sm text-sand-cream/50 mb-4">{t('preferContact')}</p>
+          <p className="text-sm text-jungle-deep/45 mb-4">{t('preferContact')}</p>
           <div className="flex items-center justify-center gap-6">
             <a
               href="https://wa.me/529841374927"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sand-cream/70 hover:text-gold transition-colors"
+              className="flex items-center gap-2 text-jungle-deep/60 hover:text-gold-dark transition-colors"
             >
               <MessageCircle className="w-4 h-4" />
               <span className="text-sm">{t('whatsapp')}</span>
             </a>
             <a
               href="mailto:d.comercial@selvadentrotulum.com"
-              className="flex items-center gap-2 text-sand-cream/70 hover:text-gold transition-colors"
+              className="flex items-center gap-2 text-jungle-deep/60 hover:text-gold-dark transition-colors"
             >
               <Mail className="w-4 h-4" />
               <span className="text-sm">{t('email')}</span>
             </a>
             <a
               href="tel:+529841374927"
-              className="flex items-center gap-2 text-sand-cream/70 hover:text-gold transition-colors"
+              className="flex items-center gap-2 text-jungle-deep/60 hover:text-gold-dark transition-colors"
             >
               <Phone className="w-4 h-4" />
               <span className="text-sm">+52 984 137 4927</span>
@@ -279,19 +240,19 @@ export default function FinalCTASection() {
       </div>
 
       {/* Footer */}
-      <footer className="relative z-10 mt-24 pt-8 border-t border-sand-cream/10">
+      <footer className="relative z-10 mt-24 pt-8 border-t border-jungle-deep/10">
         <div className="px-6 lg:px-12 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <img
             src="/selvadentro-logo-white.png"
-            alt="Selvadentro Tulum"
-            className="h-7 w-auto opacity-60"
+            alt="Suspiro en Selvadentro"
+            className="h-7 w-auto opacity-40"
           />
-          <div className="flex items-center gap-6 text-sm text-sand-cream/50">
-            <a href="#" className="hover:text-gold transition-colors">{t('privacy')}</a>
-            <a href="#" className="hover:text-gold transition-colors">{t('terms')}</a>
+          <div className="flex items-center gap-6 text-sm text-jungle-deep/45">
+            <a href="/privacy" className="hover:text-gold-dark transition-colors">{t('privacy')}</a>
+            <a href="/terms" className="hover:text-gold-dark transition-colors">{t('terms')}</a>
           </div>
-          <p className="text-xs text-sand-cream/40">
-            © 2026 Selvadentro Tulum. Av. Tulum, CP 77764, Tulum, Mexico.
+          <p className="text-xs text-jungle-deep/35">
+            © 2026 Suspiro at Selvadentro. Av. Tulum, CP 77764, Tulum, Mexico.
           </p>
         </div>
       </footer>

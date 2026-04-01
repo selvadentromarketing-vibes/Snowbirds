@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from '@/hooks/useLanguage';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -7,6 +8,7 @@ import Header from '@/sections/Header';
 import HeroSection from '@/sections/HeroSection';
 import PriceLotSection from '@/sections/PriceLotSection';
 import WhyTulumSection from '@/sections/WhyTulumSection';
+import BeforeAfterSection from '@/sections/BeforeAfterSection';
 import BlueZoneSection from '@/sections/BlueZoneSection';
 import ConceptSection from '@/sections/ConceptSection';
 import ArchitectureSection from '@/sections/ArchitectureSection';
@@ -15,46 +17,42 @@ import RareOpportunitySection from '@/sections/RareOpportunitySection';
 import TestimonialsSection from '@/sections/TestimonialsSection';
 import FinalCTASection from '@/sections/FinalCTASection';
 import StickyCTA from '@/sections/StickyCTA';
+import PrivacyPolicy from '@/pages/PrivacyPolicy';
+import TermsConditions from '@/pages/TermsConditions';
 
 import './App.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-function App() {
+function LandingPage() {
   useEffect(() => {
-    // Wait for all ScrollTriggers to be created
     const timer = setTimeout(() => {
       const pinned = ScrollTrigger.getAll()
         .filter(st => st.vars.pin)
         .sort((a, b) => a.start - b.start);
-      
+
       const maxScroll = ScrollTrigger.maxScroll(window);
-      
+
       if (!maxScroll || pinned.length === 0) return;
 
-      // Build ranges and snap targets from pinned sections
       const pinnedRanges = pinned.map(st => ({
         start: st.start / maxScroll,
         end: (st.end ?? st.start) / maxScroll,
         center: (st.start + ((st.end ?? st.start) - st.start) * 0.5) / maxScroll,
       }));
 
-      // Create global snap
       ScrollTrigger.create({
         snap: {
           snapTo: (value: number) => {
-            // Check if within any pinned range (with small buffer)
             const inPinned = pinnedRanges.some(
               r => value >= r.start - 0.02 && value <= r.end + 0.02
             );
-            
-            // If not in pinned section, allow free scroll
+
             if (!inPinned) return value;
 
-            // Find nearest pinned center
             const target = pinnedRanges.reduce((closest, r) =>
-              Math.abs(r.center - value) < Math.abs(closest - value) 
-                ? r.center 
+              Math.abs(r.center - value) < Math.abs(closest - value)
+                ? r.center
                 : closest,
               pinnedRanges[0]?.center ?? 0
             );
@@ -67,7 +65,6 @@ function App() {
         }
       });
 
-      // Refresh ScrollTrigger after setup
       ScrollTrigger.refresh();
     }, 100);
 
@@ -78,30 +75,36 @@ function App() {
   }, []);
 
   return (
+    <>
+      <div className="noise-overlay" />
+      <Header />
+      <main className="relative">
+        <HeroSection />
+        <PriceLotSection />
+        <WhyTulumSection />
+        <BeforeAfterSection />
+        <BlueZoneSection />
+        <ConceptSection />
+        <ArchitectureSection />
+        <LifestyleSection />
+        <RareOpportunitySection />
+        <TestimonialsSection />
+        <FinalCTASection />
+      </main>
+      <StickyCTA />
+    </>
+  );
+}
+
+function App() {
+  return (
     <LanguageProvider>
-      <div className="relative">
-        {/* Noise overlay */}
-        <div className="noise-overlay" />
-        
-        {/* Header */}
-        <Header />
-        
-        {/* Main content */}
-        <main className="relative">
-          <HeroSection />
-          <PriceLotSection />
-          <WhyTulumSection />
-          <BlueZoneSection />
-          <ConceptSection />
-          <ArchitectureSection />
-          <LifestyleSection />
-          <RareOpportunitySection />
-          <TestimonialsSection />
-          <FinalCTASection />
-        </main>
-        
-        {/* Sticky CTA */}
-        <StickyCTA />
+      <div className="relative overflow-x-hidden">
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsConditions />} />
+        </Routes>
       </div>
     </LanguageProvider>
   );

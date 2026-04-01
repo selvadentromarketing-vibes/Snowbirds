@@ -158,7 +158,7 @@ export default function LifestyleSection() {
         {lifestyleImages.map((image, index) => (
           <div 
             key={index}
-            className={`lifestyle-image absolute overflow-hidden rounded-sm ${image.className}`}
+            className={`lifestyle-image absolute overflow-hidden rounded-xl ${image.className}`}
             style={{ willChange: 'transform, opacity' }}
           >
             <img 
@@ -168,14 +168,14 @@ export default function LifestyleSection() {
             />
             
             {/* Label */}
-            <div className="image-label absolute bottom-4 left-4 px-3 py-1.5 bg-jungle-deep/60 backdrop-blur-sm rounded-sm">
+            <div className="image-label absolute bottom-4 left-4 px-3 py-1.5 bg-jungle-deep/60 backdrop-blur-sm rounded-xl">
               <span className="text-xs text-sand-cream tracking-micro uppercase">
                 {image.label}
               </span>
             </div>
 
             {/* Border */}
-            <div className="absolute inset-0 border border-sand-cream/10 rounded-sm pointer-events-none" />
+            <div className="absolute inset-0 border border-sand-cream/10 rounded-xl pointer-events-none" />
           </div>
         ))}
       </div>

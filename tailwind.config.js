@@ -51,6 +51,7 @@ module.exports = {
         gold: {
           DEFAULT: '#C8A46B',
           light: '#d4b27a',
+          dark: '#A88845',
         },
         terracotta: '#6C3F3A',
       },

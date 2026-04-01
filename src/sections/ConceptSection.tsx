@@ -8,145 +8,84 @@ gsap.registerPlugin(ScrollTrigger);
 export default function ConceptSection() {
   const { t } = useLanguage();
   const sectionRef = useRef<HTMLElement>(null);
-  const bgRef = useRef<HTMLDivElement>(null);
-  const labelRef = useRef<HTMLSpanElement>(null);
-  const statementRef = useRef<HTMLParagraphElement>(null);
-  const ctaRef = useRef<HTMLButtonElement>(null);
+  const photoRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const section = sectionRef.current;
-    const bg = bgRef.current;
-    const label = labelRef.current;
-    const statement = statementRef.current;
-    const cta = ctaRef.current;
+    const photo = photoRef.current;
+    const text = textRef.current;
 
-    if (!section || !bg || !label || !statement || !cta) return;
+    if (!section || !photo || !text) return;
 
     const ctx = gsap.context(() => {
-      const scrollTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: section,
-          start: 'top top',
-          end: '+=130%',
-          pin: true,
-          scrub: 0.6,
+      gsap.fromTo(photo,
+        { opacity: 0, x: '-6vw' },
+        {
+          opacity: 1, x: 0, duration: 0.8, ease: 'power2.out',
+          scrollTrigger: { trigger: section, start: 'top 75%', end: 'top 45%', scrub: true }
         }
-      });
-
-      // ENTRANCE (0% - 30%)
-      // Label
-      scrollTl.fromTo(label,
-        { opacity: 0, y: -10 },
-        { opacity: 1, y: 0, ease: 'none' },
-        0
       );
 
-      // Statement words
-      const words = statement.querySelectorAll('.word');
-      scrollTl.fromTo(words,
-        { opacity: 0, y: 28, rotateX: 22 },
-        { opacity: 1, y: 0, rotateX: 0, stagger: 0.015, ease: 'none' },
-        0.06
+      gsap.fromTo(text.children,
+        { opacity: 0, x: '4vw' },
+        {
+          opacity: 1, x: 0, duration: 0.8, stagger: 0.08, ease: 'power2.out',
+          scrollTrigger: { trigger: section, start: 'top 75%', end: 'top 45%', scrub: true }
+        }
       );
-
-      // CTA
-      scrollTl.fromTo(cta,
-        { opacity: 0, y: 14 },
-        { opacity: 1, y: 0, ease: 'none' },
-        0.18
-      );
-
-      // Background parallax (0% - 70%)
-      scrollTl.fromTo(bg,
-        { y: 0 },
-        { y: '-3vh', ease: 'none' },
-        0
-      );
-
-      // EXIT (70% - 100%)
-      scrollTl.fromTo(words,
-        { opacity: 1, y: 0 },
-        { opacity: 0, y: -16, ease: 'power2.in', stagger: 0.01 },
-        0.7
-      );
-
-      scrollTl.fromTo(label,
-        { opacity: 1 },
-        { opacity: 0, ease: 'power2.in' },
-        0.72
-      );
-
-      scrollTl.fromTo(cta,
-        { opacity: 1 },
-        { opacity: 0, ease: 'power2.in' },
-        0.74
-      );
-
-      scrollTl.fromTo(bg,
-        { scale: 1, opacity: 1 },
-        { scale: 1.05, opacity: 0.7, ease: 'power2.in' },
-        0.7
-      );
-
     }, section);
 
     return () => ctx.revert();
   }, []);
 
-  const statementText = t('conceptStatement') as string;
-  const words = statementText.split(' ');
+  const scrollToContact = () => {
+    const el = document.getElementById('contact');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
-    <section 
+    <section
       ref={sectionRef}
       id="concept"
-      className="section-pinned relative flex items-center justify-center"
-      style={{ zIndex: 50 }}
+      className="section-flowing relative py-24 lg:py-32"
+      style={{ zIndex: 50, backgroundColor: '#E8DFC8' }}
     >
-      {/* Background image */}
-      <div 
-        ref={bgRef}
-        className="absolute inset-0 w-full h-full"
-        style={{ willChange: 'transform, opacity' }}
-      >
-        <img 
-          src="/jungle_architecture_aerial.jpg" 
-          alt="Jungle Architecture"
-          className="w-full h-full object-cover"
-        />
-        <div className="bg-overlay" />
-      </div>
+      <div className="px-6 lg:px-12 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          {/* Left: Photo */}
+          <div
+            ref={photoRef}
+            className="rounded-xl overflow-hidden bg-sand-beige"
+          >
+            <img
+              src="/selvadentro-aerial.png"
+              alt="Suspiro en Selvadentro aerial view"
+              className="w-full h-auto object-contain"
+            />
+          </div>
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        {/* Label */}
-        <span 
-          ref={labelRef}
-          className="label-micro block mb-8"
-        >
-          {t('conceptLabel')}
-        </span>
-
-        {/* Statement */}
-        <p 
-          ref={statementRef}
-          className="font-serif text-section text-sand-cream tracking-wide mb-12"
-          style={{ lineHeight: 1.15 }}
-        >
-          {words.map((word, i) => (
-            <span key={i} className="word inline-block mr-[0.3em]">
-              {word}
+          {/* Right: Text */}
+          <div ref={textRef}>
+            <span className="label-micro block mb-4 text-xs">
+              {t('conceptLabel')}
             </span>
-          ))}
-        </p>
 
-        {/* CTA */}
-        <button 
-          ref={ctaRef}
-          className="btn-outline"
-        >
-          {t('conceptCta')}
-        </button>
+            <p
+              className="font-serif text-xl lg:text-2xl text-jungle-deep tracking-wide mb-8"
+              style={{ lineHeight: 1.4 }}
+            >
+              {t('conceptStatement')}
+            </p>
+
+            <button
+              onClick={scrollToContact}
+              className="btn-primary"
+            >
+              {t('conceptCta')}
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -110,8 +110,8 @@ export default function BlueZoneSection() {
         style={{ willChange: 'transform, opacity' }}
       >
         <img 
-          src="/cenote_water_surface.jpg" 
-          alt="Cenote Water"
+          src="/cenote_water_surface.jpg"
+          alt="Natural cenote at Selvadentro"
           className="w-full h-full object-cover"
         />
         <div className="bg-overlay" />
@@ -143,7 +143,7 @@ export default function BlueZoneSection() {
         {/* CTA */}
         <button 
           ref={ctaRef}
-          className="btn-outline"
+          className="btn-outline-dark"
         >
           {t('blueZoneCta')}
         </button>

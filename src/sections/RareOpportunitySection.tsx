@@ -125,8 +125,8 @@ export default function RareOpportunitySection() {
         style={{ willChange: 'transform, opacity' }}
       >
         <img 
-          src="/aerial_jungle_reserve.jpg" 
-          alt="Jungle Reserve"
+          src="/rare-opportunity-bg.avif"
+          alt="Suspiro en Selvadentro"
           className="w-full h-full object-cover"
         />
       </div>

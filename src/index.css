@@ -6,34 +6,35 @@
 
 @layer base {
   :root {
-    /* Selvadentro Color Palette */
+    /* Suspiro at Selvadentro Color Palette */
     --jungle-deep: 168 55% 15%;
     --jungle-emerald: 158 52% 24%;
     --sand-beige: 43 32% 85%;
     --cenote-turquoise: 176 57% 42%;
     --soft-cream: 43 29% 94%;
     --accent-gold: 40 42% 60%;
-    
-    --background: 168 55% 15%;
-    --foreground: 43 29% 94%;
-    --card: 168 50% 18%;
-    --card-foreground: 43 29% 94%;
-    --popover: 168 50% 18%;
-    --popover-foreground: 43 29% 94%;
+    --accent-gold-dark: 40 42% 46%;
+
+    --background: 43 29% 94%;
+    --foreground: 168 55% 15%;
+    --card: 43 32% 85%;
+    --card-foreground: 168 55% 15%;
+    --popover: 43 29% 94%;
+    --popover-foreground: 168 55% 15%;
     --primary: 40 42% 60%;
     --primary-foreground: 168 55% 15%;
     --secondary: 158 52% 24%;
     --secondary-foreground: 43 29% 94%;
-    --muted: 168 40% 20%;
-    --muted-foreground: 43 20% 70%;
+    --muted: 43 20% 88%;
+    --muted-foreground: 168 30% 35%;
     --accent: 176 57% 42%;
     --accent-foreground: 168 55% 15%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 168 30% 25%;
-    --input: 168 30% 25%;
+    --border: 168 20% 75%;
+    --input: 168 20% 75%;
     --ring: 40 42% 60%;
-    --radius: 0.25rem;
+    --radius: 0.75rem;
   }
 }
 
@@ -47,7 +48,7 @@
   }
   
   body {
-    @apply bg-[#0B3A3A] text-[#F5F2EA] antialiased;
+    @apply bg-[#F5F2EA] text-[#0B3A3A] antialiased;
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
   }
@@ -63,16 +64,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0B3A3A;
+  background: #F5F2EA;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(200, 164, 107, 0.4);
+  background: rgba(11, 58, 58, 0.25);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(200, 164, 107, 0.6);
+  background: rgba(11, 58, 58, 0.4);
 }
 
 /* Noise overlay */
@@ -148,7 +149,7 @@
 
 /* Button styles */
 .btn-primary {
-  @apply px-8 py-4 bg-[#C8A46B] text-[#0B3A3A] font-medium tracking-wider uppercase text-xs transition-all duration-300;
+  @apply px-8 py-4 bg-[#C8A46B] text-[#0B3A3A] font-medium tracking-wider uppercase text-xs transition-all duration-300 rounded-full;
 }
 
 .btn-primary:hover {
@@ -156,15 +157,29 @@
 }
 
 .btn-outline {
-  @apply px-8 py-4 border border-[#F5F2EA]/40 text-[#F5F2EA] font-medium tracking-wider uppercase text-xs transition-all duration-300;
+  @apply px-8 py-4 border border-[#0B3A3A]/30 text-[#0B3A3A] font-medium tracking-wider uppercase text-xs transition-all duration-300 rounded-full;
 }
 
 .btn-outline:hover {
+  @apply border-[#C8A46B] text-[#A88845];
+}
+
+/* Outline button for dark backgrounds (pinned sections with overlays) */
+.btn-outline-dark {
+  @apply px-8 py-4 border border-[#F5F2EA]/40 text-[#F5F2EA] font-medium tracking-wider uppercase text-xs transition-all duration-300 rounded-full;
+}
+
+.btn-outline-dark:hover {
   @apply border-[#C8A46B] text-[#C8A46B];
 }
 
-/* Label microtext */
+/* Label microtext — use on light backgrounds */
 .label-micro {
+  @apply text-[11px] font-medium tracking-[0.18em] uppercase text-[#A88845];
+}
+
+/* Label microtext — use on dark backgrounds */
+.label-micro-light {
   @apply text-[11px] font-medium tracking-[0.18em] uppercase text-[#C8A46B];
 }
 
@@ -179,16 +194,27 @@
 
 /* Hairline */
 .hairline {
+  @apply border-t border-[#0B3A3A]/15;
+}
+
+.hairline-light {
   @apply border-t border-[#F5F2EA]/20;
 }
 
-/* Form styles */
+/* Form styles — default for light backgrounds */
 input, textarea, select {
-  @apply bg-transparent border-b border-[#F5F2EA]/30 py-3 px-0 text-[#F5F2EA] placeholder:text-[#F5F2EA]/50 focus:outline-none focus:border-[#C8A46B] transition-colors;
+  @apply bg-transparent border-b border-[#0B3A3A]/25 py-3 px-0 text-[#0B3A3A] placeholder:text-[#0B3A3A]/45 focus:outline-none focus:border-[#C8A46B] transition-colors;
+}
+
+/* Form styles for dark backgrounds */
+.dark-section input,
+.dark-section textarea,
+.dark-section select {
+  @apply border-b border-[#F5F2EA]/30 text-[#F5F2EA] placeholder:text-[#F5F2EA]/50;
 }
 
 /* Selection */
 ::selection {
   background: rgba(200, 164, 107, 0.3);
-  color: #F5F2EA;
+  color: #0B3A3A;
 }

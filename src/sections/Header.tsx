@@ -23,16 +23,28 @@ export default function Header() {
     }
   };
 
-  const menuItems = [
+  const menuItems = language === 'es' ? [
     { id: 'hero', label: 'Inicio' },
     { id: 'pricing', label: 'Inversión' },
     { id: 'why-tulum', label: 'Tulum' },
+    { id: 'before-after', label: 'Tu nueva vida' },
     { id: 'blue-zone', label: 'Bienestar' },
     { id: 'concept', label: 'Concepto' },
     { id: 'architecture', label: 'Arquitectura' },
     { id: 'lifestyle', label: 'Estilo de vida' },
     { id: 'testimonials', label: 'Testimonios' },
     { id: 'contact', label: 'Contacto' },
+  ] : [
+    { id: 'hero', label: 'Home' },
+    { id: 'pricing', label: 'Investment' },
+    { id: 'why-tulum', label: 'Tulum' },
+    { id: 'before-after', label: 'Your new life' },
+    { id: 'blue-zone', label: 'Wellness' },
+    { id: 'concept', label: 'Concept' },
+    { id: 'architecture', label: 'Architecture' },
+    { id: 'lifestyle', label: 'Lifestyle' },
+    { id: 'testimonials', label: 'Testimonials' },
+    { id: 'contact', label: 'Contact' },
   ];
 
   return (
@@ -49,8 +61,8 @@ export default function Header() {
             className="hover:opacity-80 transition-opacity"
           >
             <img
-              src="/selvadentro-logo-white.png"
-              alt="Selvadentro Tulum"
+              src="/selvadentro-logo-cream.png"
+              alt="Suspiro en Selvadentro"
               className="h-8 lg:h-9 w-auto"
             />
           </button>
@@ -98,8 +110,8 @@ export default function Header() {
           {/* Menu header */}
           <div className="flex items-center justify-between px-6 lg:px-12 py-5">
             <img
-              src="/selvadentro-logo-white.png"
-              alt="Selvadentro Tulum"
+              src="/selvadentro-logo-cream.png"
+              alt="Suspiro en Selvadentro"
               className="h-8 lg:h-9 w-auto"
             />
             <button 
@@ -131,8 +143,8 @@ export default function Header() {
 
           {/* Menu footer */}
           <div className="px-6 lg:px-12 py-8 flex justify-center gap-8 text-sm text-sand-cream/50">
-            <a href="#" className="hover:text-gold transition-colors">{t('privacy')}</a>
-            <a href="#" className="hover:text-gold transition-colors">{t('terms')}</a>
+            <a href="/privacy" className="hover:text-gold transition-colors">{t('privacy')}</a>
+            <a href="/terms" className="hover:text-gold transition-colors">{t('terms')}</a>
           </div>
         </div>
       </div>

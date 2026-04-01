@@ -80,13 +80,13 @@ export default function ArchitectureSection() {
       ref={sectionRef}
       id="architecture"
       className="section-flowing relative py-24 lg:py-32"
-      style={{ zIndex: 60, backgroundColor: '#0B3A3A' }}
+      style={{ zIndex: 60, backgroundColor: '#F5F2EA' }}
     >
       <div className="px-6 lg:px-12 max-w-7xl mx-auto">
         {/* Title */}
         <h2 
           ref={titleRef}
-          className="font-serif text-section text-sand-cream tracking-wide mb-12 lg:mb-16 max-w-2xl"
+          className="font-serif text-section text-jungle-deep tracking-wide mb-12 lg:mb-16 max-w-2xl"
           style={{ lineHeight: 1.1 }}
         >
           {t('architectureTitle')}
@@ -100,7 +100,7 @@ export default function ArchitectureSection() {
           {images.map((image, index) => (
             <div 
               key={index}
-              className="gallery-card relative overflow-hidden rounded-sm group cursor-pointer aspect-[4/3]"
+              className="gallery-card relative overflow-hidden rounded-xl group cursor-pointer aspect-[4/3]"
             >
               {/* Image */}
               <img 
@@ -120,7 +120,7 @@ export default function ArchitectureSection() {
               </div>
 
               {/* Border */}
-              <div className="absolute inset-0 border border-sand-cream/10 rounded-sm pointer-events-none" />
+              <div className="absolute inset-0 border border-jungle-deep/10 rounded-xl pointer-events-none" />
             </div>
           ))}
         </div>

@@ -141,14 +141,16 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         {/* Headline */}
-        <h1 
+        <h1
           ref={headlineRef}
-          className="font-serif text-hero text-sand-cream tracking-widest mb-6"
+          className="font-serif text-hero text-sand-cream tracking-widest mb-2"
           style={{ lineHeight: 1.05 }}
         >
-          <span className="word inline-block">SELVA</span>
-          <span className="word inline-block">DENTRO</span>
+          <span className="word inline-block">{t('wordmark')}</span>
         </h1>
+        <p className="word text-lg md:text-xl text-sand-cream/60 tracking-[0.2em] uppercase font-light mb-6">
+          {t('heroSubtitle')}
+        </p>
 
         {/* Subheadline */}
         <p 
@@ -166,9 +168,9 @@ export default function HeroSection() {
           >
             {t('ctaPrimary')}
           </button>
-          <button 
+          <button
             onClick={scrollToVideo}
-            className="btn-outline"
+            className="btn-outline-dark"
           >
             {t('ctaSecondary')}
           </button>
