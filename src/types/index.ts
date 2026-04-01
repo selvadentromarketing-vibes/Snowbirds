@@ -47,7 +47,7 @@ export const translations = {
     lotCta: 'Solicitar disponibilidad y precios',
 
     // Why Tulum Section
-    whyTulumTitle: 'Por qué los migrantes invernales eligen Tulum',
+    whyTulumTitle: 'Por qué los que buscan retirarse eligen la Riviera Maya',
     warmWeather: 'Clima cálido todo el año',
     warmWeatherDesc: 'Promedio 27°C / 80°F con más de 300 días de sol al año. Olvida los inviernos, las palas de nieve y los abrigos.',
     airportAccess: 'Aeropuerto internacional a minutos',
@@ -68,8 +68,8 @@ export const translations = {
     blueZoneCta: 'Explorar bienestar',
 
     // Concept Section
-    conceptLabel: 'EL CONCEPTO',
-    conceptStatement: 'La mayoría de los desarrollos eliminan la selva. Suspiro at Selvadentro preserva el 65% como naturaleza intacta — 9 cenotes naturales, corredores verdes y arquitectura que respira con la tierra.',
+    conceptLabel: 'SUSPIRO',
+    conceptStatement: 'Un enclave privado dentro de Selvadentro — 103 hectáreas de selva protegida con solo 35% de área edificable. 9 cenotes naturales, corredores verdes y arquitectura que respira con la tierra. Tu refugio personal en el corazón de la Riviera Maya.',
     conceptCta: 'Ver el plan maestro',
 
     // Architecture Section
@@ -158,7 +158,7 @@ export const translations = {
     lotCta: 'Request availability & pricing',
 
     // Why Tulum Section
-    whyTulumTitle: 'Why snowbirds are choosing Tulum',
+    whyTulumTitle: 'Why retirees are choosing the Riviera Maya',
     warmWeather: 'Warm weather year-round',
     warmWeatherDesc: 'Average 27°C / 80°F with 300+ sunny days a year. Forget the winters, snow shovels, and heavy coats.',
     airportAccess: 'International airport minutes away',
@@ -179,8 +179,8 @@ export const translations = {
     blueZoneCta: 'Explore wellness',
 
     // Concept Section
-    conceptLabel: 'THE CONCEPT',
-    conceptStatement: 'Most developments remove the jungle. Suspiro at Selvadentro preserves 65% as untouched nature — 9 natural cenotes, green corridors, and architecture that breathes with the land.',
+    conceptLabel: 'SUSPIRO',
+    conceptStatement: 'A private enclave within Selvadentro — 103 hectares of protected jungle with only 35% buildable area. 9 natural cenotes, green corridors, and architecture that breathes with the land. Your personal sanctuary in the heart of the Riviera Maya.',
     conceptCta: 'See the masterplan',
 
     // Architecture Section

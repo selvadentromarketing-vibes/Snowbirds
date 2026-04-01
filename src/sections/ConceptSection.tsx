@@ -56,13 +56,15 @@ export default function ConceptSection() {
           {/* Left: Photo */}
           <div
             ref={photoRef}
-            className="rounded-xl overflow-hidden bg-sand-beige"
+            className="flex justify-center lg:justify-end"
           >
-            <img
-              src="/selvadentro-aerial.png"
-              alt="Suspiro en Selvadentro aerial view"
-              className="w-full h-auto object-contain"
-            />
+            <div className="rounded-xl overflow-hidden bg-sand-beige w-[240px] md:w-[280px]">
+              <img
+                src="/selvadentro-aerial.png"
+                alt="Suspiro en Selvadentro aerial view"
+                className="w-full h-auto"
+              />
+            </div>
           </div>
 
           {/* Right: Text */}

@@ -109,10 +109,11 @@ export default function BlueZoneSection() {
         className="absolute inset-0 w-full h-full"
         style={{ willChange: 'transform, opacity' }}
       >
-        <img 
+        <img
           src="/cenote_water_surface.jpg"
           alt="Natural cenote at Selvadentro"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center"
+          style={{ objectPosition: '50% 35%' }}
         />
         <div className="bg-overlay" />
       </div>
