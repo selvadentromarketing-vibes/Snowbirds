@@ -7,7 +7,7 @@ import { TrendingUp, Shield, TreePine, DollarSign } from 'lucide-react';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function PriceLotSection() {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
   const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
