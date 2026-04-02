@@ -162,8 +162,12 @@ export default function RareOpportunitySection() {
         </p>
 
         {/* CTA */}
-        <button 
+        <button
           ref={ctaRef}
+          onClick={() => {
+            const el = document.getElementById('contact');
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }}
           className="btn-primary"
         >
           {t('rareCta')}

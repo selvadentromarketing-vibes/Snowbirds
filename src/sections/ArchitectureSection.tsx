@@ -62,15 +62,18 @@ export default function ArchitectureSection() {
 
   const images = [
     {
-      src: '/architecture_craft_01.jpg',
+      src: '/architecture_craft_01.webp',
+      alt: 'Mexican artisan craft details in Selvadentro architecture',
       caption: t('mexicanCraft'),
     },
     {
-      src: '/architecture_craft_02.jpg',
+      src: '/architecture_craft_02.webp',
+      alt: 'Balinese-inspired calm interior design at Selvadentro Tulum',
       caption: t('balineseCalm'),
     },
     {
-      src: '/architecture_craft_03.jpg',
+      src: '/architecture_craft_03.webp',
+      alt: 'Tropical modern architecture blending jungle and design in Tulum',
       caption: t('tropicalModern'),
     },
   ];
@@ -103,9 +106,10 @@ export default function ArchitectureSection() {
               className="gallery-card relative overflow-hidden rounded-xl group cursor-pointer aspect-[4/3]"
             >
               {/* Image */}
-              <img 
+              <img
                 src={image.src}
-                alt={image.caption as string}
+                alt={image.alt}
+                loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
               />
               

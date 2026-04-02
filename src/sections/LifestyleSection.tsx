@@ -108,27 +108,32 @@ export default function LifestyleSection() {
 
   const lifestyleImages = [
     {
-      src: '/yoga_deck_jungle.jpg',
+      src: '/yoga_deck_jungle.webp',
+      alt: 'Morning yoga session on jungle deck at Selvadentro Tulum',
       label: t('morningYoga'),
       className: 'left-[8vw] top-[30vh] w-[38vw] aspect-[16/10]',
     },
     {
-      src: '/cenote_swim_platform.jpg',
+      src: '/cenote_swim_platform.webp',
+      alt: 'Natural cenote swimming platform surrounded by jungle',
       label: t('cenoteSwim'),
       className: 'right-[8vw] top-[18vh] w-[26vw] aspect-square',
     },
     {
-      src: '/biking_trail_jungle.jpg',
+      src: '/biking_trail_jungle.webp',
+      alt: 'Biking trail through lush jungle at Selvadentro community',
       label: t('bikingTrails'),
       className: 'left-[8vw] bottom-[10vh] w-[22vw] aspect-[4/3]',
     },
     {
-      src: '/tulum_beach_aerial.jpg',
+      src: '/tulum_beach_aerial.webp',
+      alt: 'Aerial view of pristine Tulum Caribbean beach',
       label: t('beachTime'),
       className: 'left-[34vw] bottom-[10vh] w-[22vw] aspect-[4/3]',
     },
     {
-      src: '/dinner_under_stars.jpg',
+      src: '/dinner_under_stars.webp',
+      alt: 'Outdoor dining under the stars at Selvadentro Tulum',
       label: t('dinnerStars'),
       className: 'right-[8vw] bottom-[10vh] w-[22vw] aspect-[4/3]',
     },
@@ -161,9 +166,10 @@ export default function LifestyleSection() {
             className={`lifestyle-image absolute overflow-hidden rounded-xl ${image.className}`}
             style={{ willChange: 'transform, opacity' }}
           >
-            <img 
+            <img
               src={image.src}
-              alt={image.label as string}
+              alt={image.alt}
+              loading="lazy"
               className="w-full h-full object-cover"
             />
             

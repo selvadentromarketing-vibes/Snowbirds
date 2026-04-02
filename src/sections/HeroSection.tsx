@@ -110,8 +110,8 @@ export default function HeroSection() {
     }
   };
 
-  const scrollToVideo = () => {
-    const element = document.getElementById('video-letter');
+  const scrollToDiscover = () => {
+    const element = document.getElementById('pricing');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -131,8 +131,9 @@ export default function HeroSection() {
         style={{ willChange: 'transform, opacity' }}
       >
         <img 
-          src="/hero_jungle_canopy.jpg" 
-          alt="Selvadentro Jungle"
+          src="/hero_jungle_canopy.webp"
+          alt="Aerial view of Selvadentro jungle canopy in Tulum, Mexico"
+          loading="eager"
           className="w-full h-full object-cover"
         />
         <div className="bg-overlay" />
@@ -169,7 +170,7 @@ export default function HeroSection() {
             {t('ctaPrimary')}
           </button>
           <button
-            onClick={scrollToVideo}
+            onClick={scrollToDiscover}
             className="btn-outline-dark"
           >
             {t('ctaSecondary')}

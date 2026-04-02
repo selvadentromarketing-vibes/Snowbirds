@@ -60,8 +60,9 @@ export default function ConceptSection() {
           >
             <div className="rounded-xl overflow-hidden bg-sand-beige w-[240px] md:w-[280px]">
               <img
-                src="/selvadentro-aerial.png"
-                alt="Suspiro en Selvadentro aerial view"
+                src="/selvadentro-aerial.webp"
+                alt="Aerial masterplan view of Suspiro at Selvadentro private community in Tulum jungle"
+                loading="lazy"
                 className="w-full h-auto"
               />
             </div>

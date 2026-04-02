@@ -4,7 +4,7 @@ import { translations, type Language, type LanguageContextType } from '@/types';
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>('es');
+  const [language, setLanguage] = useState<Language>('en');
 
   const t = useCallback((key: string): string => {
     const keys = key.split('.');

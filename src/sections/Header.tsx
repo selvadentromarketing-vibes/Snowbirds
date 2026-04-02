@@ -61,8 +61,10 @@ export default function Header() {
             className="hover:opacity-80 transition-opacity"
           >
             <img
-              src="/selvadentro-logo-cream.png"
-              alt="Suspiro en Selvadentro"
+              src="/selvadentro-logo-cream.webp"
+              alt="Suspiro at Selvadentro logo"
+              width="160"
+              height="36"
               className="h-8 lg:h-9 w-auto"
             />
           </button>
@@ -71,14 +73,14 @@ export default function Header() {
           <div className="flex items-center gap-6">
             {/* Language toggle */}
             <div className="flex items-center gap-2 text-sm">
-              <button 
+              <button
                 onClick={() => setLanguage('es')}
                 className={`transition-colors ${language === 'es' ? 'text-gold' : 'text-sand-cream/60 hover:text-sand-cream'}`}
               >
                 ES
               </button>
               <span className="text-sand-cream/30">|</span>
-              <button 
+              <button
                 onClick={() => setLanguage('en')}
                 className={`transition-colors ${language === 'en' ? 'text-gold' : 'text-sand-cream/60 hover:text-sand-cream'}`}
               >
@@ -87,7 +89,7 @@ export default function Header() {
             </div>
 
             {/* Menu button */}
-            <button 
+            <button
               onClick={() => setIsMenuOpen(true)}
               className="flex items-center gap-2 text-sand-cream hover:text-gold transition-colors"
             >
@@ -99,19 +101,21 @@ export default function Header() {
       </header>
 
       {/* Full-screen menu overlay */}
-      <div 
+      <div
         className={`fixed inset-0 z-[100] transition-all duration-500 ${
           isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
         <div className="absolute inset-0 bg-jungle-deep/98 backdrop-blur-xl" />
-        
+
         <div className="relative h-full flex flex-col">
           {/* Menu header */}
           <div className="flex items-center justify-between px-6 lg:px-12 py-5">
             <img
-              src="/selvadentro-logo-cream.png"
-              alt="Suspiro en Selvadentro"
+              src="/selvadentro-logo-cream.webp"
+              alt="Suspiro at Selvadentro logo"
+              width="160"
+              height="36"
               className="h-8 lg:h-9 w-auto"
             />
             <button 

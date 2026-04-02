@@ -93,6 +93,11 @@ export default function BlueZoneSection() {
     return () => ctx.revert();
   }, []);
 
+  const scrollToLifestyle = () => {
+    const el = document.getElementById('lifestyle');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const headlineText = t('blueZoneTitle') as string;
   const words = headlineText.split(' ');
 
@@ -110,8 +115,9 @@ export default function BlueZoneSection() {
         style={{ willChange: 'transform, opacity' }}
       >
         <img
-          src="/cenote_water_surface.jpg"
-          alt="Natural cenote at Selvadentro"
+          src="/cenote_water_surface.webp"
+          alt="Crystal-clear cenote water surface at Selvadentro wellness community in Tulum"
+          loading="lazy"
           className="w-full h-full object-cover object-center"
           style={{ objectPosition: '50% 35%' }}
         />
@@ -142,8 +148,9 @@ export default function BlueZoneSection() {
         </p>
 
         {/* CTA */}
-        <button 
+        <button
           ref={ctaRef}
+          onClick={scrollToLifestyle}
           className="btn-outline-dark"
         >
           {t('blueZoneCta')}

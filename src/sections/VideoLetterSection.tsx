@@ -113,8 +113,9 @@ export default function VideoLetterSection() {
         style={{ willChange: 'transform, opacity' }}
       >
         <img 
-          src="/jungle_path_walking.jpg" 
-          alt="Jungle Path"
+          src="/jungle_path_walking.webp"
+          alt="Walking path through the lush Selvadentro jungle reserve in Tulum"
+          loading="lazy"
           className="w-full h-full object-cover"
         />
         <div className="bg-overlay" />

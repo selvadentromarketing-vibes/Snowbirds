@@ -46,19 +46,22 @@ export default function WhyTulumSection() {
       icon: Sun,
       title: t('warmWeather'),
       description: t('warmWeatherDesc'),
-      image: '/why-tulum-sun.jpg',
+      image: '/why-tulum-sun.webp',
+      alt: 'Warm sunny weather in Tulum, Mexico year-round',
     },
     {
       icon: Plane,
       title: t('airportAccess'),
       description: t('airportAccessDesc'),
-      image: '/why-tulum-airport.jpg',
+      image: '/why-tulum-airport.webp',
+      alt: 'New Tulum International Airport providing direct access',
     },
     {
       icon: Umbrella,
       title: t('beachesWellness'),
       description: t('beachesWellnessDesc'),
-      image: '/why-tulum-beaches.jpg',
+      image: '/why-tulum-beaches.webp',
+      alt: 'World-famous Tulum beaches and wellness lifestyle',
       featured: true,
     },
   ];
@@ -97,7 +100,8 @@ export default function WhyTulumSection() {
               {/* Background photo */}
               <img
                 src={card.image}
-                alt={card.title as string}
+                alt={card.alt}
+                loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover"
               />
               {/* Dark gradient overlay for text readability */}

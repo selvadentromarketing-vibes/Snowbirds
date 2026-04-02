@@ -47,7 +47,7 @@ export const translations = {
     lotCta: 'Solicitar disponibilidad y precios',
 
     // Why Tulum Section
-    whyTulumTitle: 'Por qué los que buscan retirarse eligen la Riviera Maya',
+    whyTulumTitle: 'Por qué quienes se retiran eligen la Riviera Maya',
     warmWeather: 'Clima cálido todo el año',
     warmWeatherDesc: 'Promedio 27°C / 80°F con más de 300 días de sol al año. Olvida los inviernos, las palas de nieve y los abrigos.',
     airportAccess: 'Aeropuerto internacional a minutos',
@@ -56,21 +56,24 @@ export const translations = {
     beachesWellnessDesc: 'Riviera Maya al alcance. Yoga, meditación, cenotes y cocina orgánica — no como vacaciones, sino como tu vida cotidiana.',
 
     // Before / After Section
+    beforeAfterLabel: 'TU NUEVA VIDA',
     beforeAfterTitle: 'Reimagina tus inviernos',
     beforeLabel: 'Tus inviernos ahora',
+    beforeHeadline: 'El frío que ya conoces',
     afterLabel: 'Tus inviernos en Suspiro',
-    beforeDesc: 'Nieve, frío, cielos grises y meses encerrado esperando que pase el invierno.',
-    afterDesc: 'Sol, playa, selva y comunidad. Cada día se siente como las mejores vacaciones de tu vida.',
+    afterHeadline: 'La vida que te espera',
+    beforeDesc: 'Nieve, frío, cielos grises y meses encerrado. La misma rutina cada año.',
+    afterDesc: 'Sol, selva, comunidad y propósito. Cada mañana comienza con algo que esperabas.',
 
     // Blue Zone Section
     blueZoneTitle: 'VIVIR MÁS. VIVIR MEJOR.',
     blueZoneDesc: 'Las comunidades más longevas del mundo comparten principios simples: movimiento natural, conexión con la naturaleza, vida en comunidad y propósito diario. Suspiro integra estos principios en cada detalle — desde senderos en la selva hasta pabellones de yoga al amanecer.',
-    blueZoneCta: 'Explorar bienestar',
+    blueZoneCta: 'Descubre cómo vivirás',
 
     // Concept Section
     conceptLabel: 'SUSPIRO',
     conceptStatement: 'Un enclave privado dentro de Selvadentro — 103 hectáreas de selva protegida con solo 35% de área edificable. 9 cenotes naturales, corredores verdes y arquitectura que respira con la tierra. Tu refugio personal en el corazón de la Riviera Maya.',
-    conceptCta: 'Ver el plan maestro',
+    conceptCta: 'Solicitar el plan maestro',
 
     // Architecture Section
     architectureTitle: 'Arquitectura diseñada para integrarse con la selva',
@@ -88,7 +91,7 @@ export const translations = {
 
     // Rare Opportunity Section
     rareTitle: 'UNA OPORTUNIDAD ÚNICA',
-    rareDesc: 'Tulum crece un +12% anual y los proyectos verdaderamente únicos son cada vez más escasos. Suspiro at Selvadentro protege uno de los paisajes más extraordinarios de la región — con solo 35% de superficie construible y 9 cenotes naturales que no se pueden replicar.',
+    rareDesc: 'Tulum crece un +12% anual y los proyectos verdaderamente únicos son cada vez más escasos. Suspiro protege un paisaje que no se puede replicar — y los precios de Fase 1 no durarán.',
     rareCta: 'Solicitar disponibilidad',
 
     // Testimonials Section
@@ -105,7 +108,7 @@ export const translations = {
     finalDesc: 'Únete a un pequeño grupo de futuros residentes para una presentación privada y una primera mirada exclusiva a Suspiro at Selvadentro.',
     formName: 'Nombre completo',
     formEmail: 'Correo electrónico',
-    formPhone: 'Teléfono (con código de país)',
+    formPhone: 'Teléfono (ej. +1 555 123 4567)',
     formCountry: 'País de residencia',
     formSubmit: 'Solicitar presentación privada',
     preferContact: '¿Prefieres contactarnos directamente?',
@@ -167,21 +170,24 @@ export const translations = {
     beachesWellnessDesc: 'Riviera Maya within reach. Yoga, meditation, cenotes and organic cuisine — not as a vacation, but as your everyday life.',
 
     // Before / After Section
+    beforeAfterLabel: 'YOUR NEW LIFE',
     beforeAfterTitle: 'Reimagine your winters',
     beforeLabel: 'Your winters now',
+    beforeHeadline: 'The cold you already know',
     afterLabel: 'Your winters at Suspiro',
-    beforeDesc: 'Snow, cold, grey skies, and months spent indoors waiting for winter to pass.',
-    afterDesc: 'Sun, beach, jungle, and community. Every day feels like the best vacation of your life.',
+    afterHeadline: 'The life waiting for you',
+    beforeDesc: 'Snow, cold, grey skies, and months spent indoors. The same routine every year.',
+    afterDesc: 'Sun, jungle, community, and purpose. Every morning begins with something you look forward to.',
 
     // Blue Zone Section
     blueZoneTitle: 'LIVE LONGER. LIVE BETTER.',
     blueZoneDesc: 'The world\'s longest-living communities share simple principles: natural movement, connection with nature, community living, and daily purpose. Suspiro integrates these principles into every detail — from jungle trails to sunrise yoga pavilions.',
-    blueZoneCta: 'Explore wellness',
+    blueZoneCta: 'See how you\'ll live',
 
     // Concept Section
     conceptLabel: 'SUSPIRO',
     conceptStatement: 'A private enclave within Selvadentro — 103 hectares of protected jungle with only 35% buildable area. 9 natural cenotes, green corridors, and architecture that breathes with the land. Your personal sanctuary in the heart of the Riviera Maya.',
-    conceptCta: 'See the masterplan',
+    conceptCta: 'Request the masterplan',
 
     // Architecture Section
     architectureTitle: 'Architecture designed to blend into the jungle',
@@ -199,7 +205,7 @@ export const translations = {
 
     // Rare Opportunity Section
     rareTitle: 'A RARE OPPORTUNITY',
-    rareDesc: 'Tulum is growing +12% annually and truly unique projects are increasingly scarce. Suspiro at Selvadentro protects one of the most extraordinary landscapes in the region — with only 35% buildable surface and 9 natural cenotes that cannot be replicated.',
+    rareDesc: 'Tulum is growing +12% annually and truly unique projects are increasingly scarce. Suspiro protects a landscape that cannot be replicated — and Phase 1 pricing won\'t last.',
     rareCta: 'Request availability',
 
     // Testimonials Section
@@ -216,7 +222,7 @@ export const translations = {
     finalDesc: 'Join a small group of future residents for a private presentation and an exclusive first look at Suspiro at Selvadentro.',
     formName: 'Full name',
     formEmail: 'Email address',
-    formPhone: 'Phone (with country code)',
+    formPhone: 'Phone (e.g. +1 555 123 4567)',
     formCountry: 'Country of residence',
     formSubmit: 'Request private presentation',
     preferContact: 'Prefer to contact us directly?',

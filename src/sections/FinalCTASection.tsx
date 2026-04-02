@@ -16,8 +16,11 @@ export default function FinalCTASection() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    countryCode: '',
     phone: '',
     country: '',
+    budget: '',
+    timeline: '',
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState(false);
@@ -65,19 +68,17 @@ export default function FinalCTASection() {
 
     try {
       const response = await fetch(
-        'https://backend.leadconnectorhq.com/forms/submit',
+        'https://services.leadconnectorhq.com/hooks/crN2IhAuOBAl7D8324yI/webhook-trigger/98e418a0-4298-4e13-b8c9-3ca61b88c91c',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            formId: 'ptxW4bYKZSJLPPLX59ua',
-            location_id: '',
-            fields: [
-              { field_key: 'full_name', value: formData.name },
-              { field_key: 'email', value: formData.email },
-              { field_key: 'phone', value: formData.phone },
-              { field_key: 'country', value: formData.country },
-            ],
+            full_name: formData.name,
+            email: formData.email,
+            phone: `${formData.countryCode} ${formData.phone}`.trim(),
+            country: formData.country,
+            budget: formData.budget,
+            investment_timeline: formData.timeline,
             source: 'snowbirds-landing-page',
           }),
         }
@@ -86,7 +87,7 @@ export default function FinalCTASection() {
       if (!response.ok) throw new Error('Submit failed');
 
       setIsSubmitted(true);
-      setFormData({ name: '', email: '', phone: '', country: '' });
+      setFormData({ name: '', email: '', countryCode: '', phone: '', country: '', budget: '', timeline: '' });
 
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const w = window as any;
@@ -156,16 +157,44 @@ export default function FinalCTASection() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-6">
             <div>
-              <input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder={t('formPhone') as string}
-                className="w-full bg-transparent border-b border-jungle-deep/20 py-3 text-jungle-deep placeholder:text-jungle-deep/40 focus:outline-none focus:border-gold transition-colors"
-              />
+              <div className="flex gap-3">
+                <select
+                  name="countryCode"
+                  value={formData.countryCode}
+                  onChange={handleChange}
+                  required
+                  className="w-[120px] shrink-0 bg-transparent border-b border-jungle-deep/20 py-3 text-jungle-deep focus:outline-none focus:border-gold transition-colors"
+                >
+                  <option value="" disabled>Code</option>
+                  <option value="+1">+1 US/CA</option>
+                  <option value="+52">+52 MX</option>
+                  <option value="+44">+44 UK</option>
+                  <option value="+34">+34 ES</option>
+                  <option value="+33">+33 FR</option>
+                  <option value="+49">+49 DE</option>
+                  <option value="+39">+39 IT</option>
+                  <option value="+55">+55 BR</option>
+                  <option value="+57">+57 CO</option>
+                  <option value="+54">+54 AR</option>
+                  <option value="+56">+56 CL</option>
+                  <option value="+51">+51 PE</option>
+                  <option value="+593">+593 EC</option>
+                  <option value="+61">+61 AU</option>
+                  <option value="+91">+91 IN</option>
+                  <option value="+81">+81 JP</option>
+                </select>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  placeholder="555 123 4567"
+                  className="flex-1 bg-transparent border-b border-jungle-deep/20 py-3 text-jungle-deep placeholder:text-jungle-deep/40 focus:outline-none focus:border-gold transition-colors"
+                />
+              </div>
             </div>
             <div>
               <input
@@ -176,6 +205,38 @@ export default function FinalCTASection() {
                 placeholder={t('formCountry') as string}
                 className="w-full bg-transparent border-b border-jungle-deep/20 py-3 text-jungle-deep placeholder:text-jungle-deep/40 focus:outline-none focus:border-gold transition-colors"
               />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <select
+                name="budget"
+                value={formData.budget}
+                onChange={handleChange}
+                required
+                className="w-full bg-transparent border-b border-jungle-deep/20 py-3 text-jungle-deep focus:outline-none focus:border-gold transition-colors"
+              >
+                <option value="" disabled>{language === 'es' ? 'Presupuesto' : 'Budget'}</option>
+                <option value="70k-100k">$70,000 – $100,000 USD</option>
+                <option value="100k-150k">$100,000 – $150,000 USD</option>
+                <option value="150k+">$150,000+ USD</option>
+              </select>
+            </div>
+            <div>
+              <select
+                name="timeline"
+                value={formData.timeline}
+                onChange={handleChange}
+                required
+                className="w-full bg-transparent border-b border-jungle-deep/20 py-3 text-jungle-deep focus:outline-none focus:border-gold transition-colors"
+              >
+                <option value="" disabled>{language === 'es' ? 'Plazo de inversión' : 'Investment timeline'}</option>
+                <option value="immediate">{language === 'es' ? 'Inmediato (1-3 meses)' : 'Immediate (1-3 months)'}</option>
+                <option value="short">{language === 'es' ? 'Corto plazo (3-6 meses)' : 'Short-term (3-6 months)'}</option>
+                <option value="medium">{language === 'es' ? 'Mediano plazo (6-12 meses)' : 'Medium-term (6-12 months)'}</option>
+                <option value="exploring">{language === 'es' ? 'Explorando opciones' : 'Just exploring'}</option>
+              </select>
             </div>
           </div>
 
@@ -243,8 +304,11 @@ export default function FinalCTASection() {
       <footer className="relative z-10 mt-24 pt-8 border-t border-jungle-deep/10">
         <div className="px-6 lg:px-12 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <img
-            src="/selvadentro-logo-white.png"
-            alt="Suspiro en Selvadentro"
+            src="/selvadentro-logo-white.webp"
+            alt="Suspiro at Selvadentro logo"
+            width="140"
+            height="28"
+            loading="lazy"
             className="h-7 w-auto opacity-40"
           />
           <div className="flex items-center gap-6 text-sm text-jungle-deep/45">
