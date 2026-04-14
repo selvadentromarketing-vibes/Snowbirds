@@ -72,7 +72,7 @@ export const translations = {
 
     // Concept Section
     conceptLabel: 'SUSPIRO',
-    conceptStatement: 'Un enclave privado dentro de Selvadentro — 103 hectáreas de selva protegida con solo 35% de área edificable. 9 cenotes naturales, corredores verdes y arquitectura que respira con la tierra. Tu refugio personal en el corazón de la Riviera Maya.',
+    conceptStatement: 'Una comunidad cerrada dentro de Selvadentro — 103 hectáreas de selva protegida con solo 35% de área edificable. 9 cenotes naturales, corredores verdes y arquitectura que respira con la tierra. Tu refugio personal en el corazón de la Riviera Maya.',
     conceptCta: 'Solicitar el plan maestro',
 
     // Architecture Section
@@ -186,7 +186,7 @@ export const translations = {
 
     // Concept Section
     conceptLabel: 'SUSPIRO',
-    conceptStatement: 'A private enclave within Selvadentro — 103 hectares of protected jungle with only 35% buildable area. 9 natural cenotes, green corridors, and architecture that breathes with the land. Your personal sanctuary in the heart of the Riviera Maya.',
+    conceptStatement: 'A gated community within Selvadentro — 103 hectares of protected jungle with only 35% buildable area. 9 natural cenotes, green corridors, and architecture that breathes with the land. Your personal sanctuary in the heart of the Riviera Maya.',
     conceptCta: 'Request the masterplan',
 
     // Architecture Section
